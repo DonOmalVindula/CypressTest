@@ -1,0 +1,60 @@
+<div class="ui horizontal divider">
+    Login From Here
+</div>
+<div class="ui grid">
+    <div class="row">
+        <div class="column">
+            <div style="width: 50%;left: 25%;" class="ui form">
+                <div class="field">
+                    <label>Cypress Text Typing</label><br>
+                    <textarea id="text-box"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label>Username</label><br>
+            <div class="ui input focus">
+                <input id="username-field" [(ngModel)]="username" type="text" placeholder="Username...">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label>Password</label><br>
+            <div class="ui input focus">
+                <input id="password-field" [(ngModel)]="password" type="password" placeholder="Password...">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <div class="ui checkbox">
+                <input id="checkbox-field" type="checkbox" [(ngModel)]="loginCheck">
+                <label>Check this before login</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <div id="submit-button" (click)="submit()" class="ui animated button blue" tabindex="0">
+                <div class="visible content">Login</div>
+                <div class="hidden content">
+                    <i class="right arrow icon"></i>
+                </div>
+            </div>
+            <div id="clear-button" (click)="clearFields()" class="ui animated fade button orange" tabindex="0">
+                <div class="visible content">Cancel</div>
+                <div class="hidden content">
+                    Clear Text
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="loginFailed" class="row">
+        <div class="column">
+            <h4 style="color: red">Login Has Failed. Please try again.</h4>
+        </div>
+    </div>
+</div>
